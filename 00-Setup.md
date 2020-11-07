@@ -30,3 +30,4 @@ Internet Explorer 虽然历史悠久，但它正在逐渐被淘汰——所以�
 
 {bsa warning <i class='fa fa-exclamation-triangle'></i> <b>Edge 不支持 GNU / Linux 平台！</b>如果你在使用 GNU / Linux，请使用自带的 Mozilla Firefox 浏览器。}
 
+{i times}
