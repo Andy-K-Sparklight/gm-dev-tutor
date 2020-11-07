@@ -1,84 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>首页</title>
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="description" content="Description" />
-  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/Andy-K-Sparklight/mcl-dev-tutor@main/vue.min.css" />
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" />
-</head>
-<body>
-  <div id="app"><i class="fa fa-circle-o-notch fa-spin"></i> 即将准备就绪……</div>
-  <script>
-    window.$docsify = {
-      plugins:[],
-      name: '<span style="font-size: 1.8rem;"<strong>GreaseMonkey Tutorial</strong></span><br /><span style="font-size: 1.3rem;">油猴脚本实例</span>',
-      loadSidebar: true,
-	  themeColor: "#df307f",
-	  externalLinkTarget: '_blank',
-	  
-    }
-  </script>
-  <link rel="icon" href="//cdn.jsdelivr.net/gh/Andy-K-Sparklight/mcl-dev-tutor@main/favicon.ico">
-  
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" />
-  <style>
-  @font-face{
-  font-family: "Fira Code";
-  src:url("//cdn.jsdelivr.net/gh/tonsky/FiraCode@master/distr/ttf/FiraCode-Regular.ttf");
-  }
-  body{
-	font-family: "Fira Code",BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-    font-variant-ligatures: normal;
-  }
-  </style>
-  <script>window.$docsify.plugins.push(function (hook, vm) {
-  hook.afterEach(function (html, next) {
-    next(parseBSAlert(parseFA(html)).replace("&amp;btmbtn",'<button type=\'button\' class="btn btn-info" style="width:100%;transition:500ms;" onclick="this.className=\'btn btn-success\';this.innerHTML=this.innerHTML.replace(\'question\',\'check\').replace(\'你完成了吗？\',\'恭喜！\')"><i class="fa fa-question"></i> 你完成了吗？</button>'
-    ));
-  });
-});
-function parseFA(html) {
-  var hb = html;
-  console.log(hb);
-  var FARegex = /&amp;i [a-z0-9\-]*/g;
-  var all = html.match(FARegex);
-  console.log(all);
-  if (all) {
-    for (var i = 0; i < all.length; i++) {
-      var iconRegex = /(?<=&amp;i )[a-z0-9-]*/g;
-      var icon = all[i].match(iconRegex) || [];
-      var res = `<i class="fa fa-${icon}"></i>`;
-      hb = hb.replace(all[i], res);
-    }
-  }
-  return hb;
-}
-function parseBSAlert(html) {
-  var hb = html;
-  var BSAlertRegex = /{bsa (success|info|warning|danger|primary|secondary|dark|light)+ [^}]*}/g;
-  var all = html.match(BSAlertRegex);
-  if (all) {
-    for (var i = 0; i < all.length; i++) {
-      var typeRegex = /(?<=\{bsa )(success|info|warning|danger|primary|secondary|dark|light)/g;
-      var textRegex = /(?<=\{bsa (success|info|warning|danger|primary|secondary|dark|light) )[^\}]*(?=\})/g;
-      var type = all[i].match(typeRegex) || [];
-      var text = all[i].match(textRegex) || [];
-      var res = `<div class="alert alert-${type[0] || ""}">${
-        text[0] || ""
-      }</div>`;
-      hb = hb.replace(all[i], res);
-    }
-  }
-  return hb;
-}
-</script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/Andy-K-Sparklight/mcl-dev-tutor@main/emoji.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="Description" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/Andy-K-Sparklight/mcl-dev-tutor@main/vue.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">即将准备就绪……</div>
+    <script>
+      window.$docsify = {
+        plugins: [],
+        tabs: {
+          persist: true,
+          sync: true,
+          theme: "classic",
+          tabComments: true,
+          tabHeadings: true,
+        },
+        name:
+          '<span style="font-size: 1.8rem;"<strong>GreaseMonkey Tutorial</strong></span><br /><span style="font-size: 1.3rem;">油猴脚本实例</span>',
+        loadSidebar: true,
+        themeColor: "#df307f",
+        externalLinkTarget: "_blank",
+      };
+    </script>
+    <link
+      rel="icon"
+      href="//cdn.jsdelivr.net/gh/Andy-K-Sparklight/mcl-dev-tutor@main/favicon.ico"
+    />
+
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"
+    />
+    <style>
+      @font-face {
+        font-family: "Fira Code";
+        src: url("//cdn.jsdelivr.net/gh/tonsky/FiraCode@master/distr/ttf/FiraCode-Regular.ttf");
+      }
+      body {
+        font-family: "Fira Code", BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+          "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-variant-ligatures: normal;
+      }
+      html {
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      window.$docsify.plugins.push(function (hook, vm) {
+        hook.afterEach(function (html, next) {
+          next(
+            parseBSAlert(parseFA(html)).replace(
+              "&amp;btmbtn",
+              "<button type='button' class=\"btn btn-info\" style=\"width:100%;transition:500ms;\" onclick=\"this.onclick=function(){};this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！');var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();\"><i class=\"fa fa-question\"></i> 你完成了吗？</button>"
+            )
+          );
+        });
+      });
+      function parseFA(html) {
+        var hb = html;
+        var FARegex = /&amp;i [a-z0-9\-]*/g;
+        var all = html.match(FARegex);
+        if (all) {
+          for (var i = 0; i < all.length; i++) {
+            var iconRegex = /(?<=&amp;i )[a-z0-9-]*/g;
+            var icon = all[i].match(iconRegex) || [];
+            var res = `<i class="fa fa-${icon}"></i>`;
+            hb = hb.replace(all[i], res);
+          }
+        }
+        return hb;
+      }
+      function parseBSAlert(html) {
+        var hb = html;
+        var BSAlertRegex = /{bsa (success|info|warning|danger|primary|secondary|dark|light)+ [^}]*}/g;
+        var all = html.match(BSAlertRegex);
+        if (all) {
+          for (var i = 0; i < all.length; i++) {
+            var typeRegex = /(?<=\{bsa )(success|info|warning|danger|primary|secondary|dark|light)/g;
+            var textRegex = /(?<=\{bsa (success|info|warning|danger|primary|secondary|dark|light) )[^\}]*(?=\})/g;
+            var type = all[i].match(typeRegex) || [];
+            var text = all[i].match(textRegex) || [];
+            var res = `<div class="alert alert-${type[0] || ""}">${
+              text[0] || ""
+            }</div>`;
+            hb = hb.replace(all[i], res);
+          }
+        }
+        return hb;
+      }
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function getStyle(obj, attr) {
+        if (window.getComputedStyle) {
+          return window.getComputedStyle(obj)[attr];
+        } else {
+          return obj.currentStyle[attr];
+        }
+      }
+      function bufferMove(obj, json, fn) {
+        let speed = 0;
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+          var flag = true;
+          for (var attr in json) {
+            var currentValue = null;
+            if (attr === "opacity") {
+              currentValue = Math.round(getStyle(obj, attr) * 100);
+            } else {
+              currentValue = parseInt(getStyle(obj, attr));
+            }
+            speed = (json[attr] - currentValue) / 10;
+            speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+
+            if (currentValue !== json[attr]) {
+              if (attr === "opacity") {
+                obj.style.opacity = (currentValue + speed) / 100;
+                obj.style.filter =
+                  "alpha(opacity=" + (currentValue + speed) + ")"; //IE
+              } else {
+                obj.style[attr] = currentValue + speed + "px";
+              }
+              flag = false;
+            }
+          }
+          if (flag) {
+            clearInterval(obj.timer);
+            fn && typeof fn === "function" && fn();
+          }
+        }, 10);
+      }
+    </script>
+    <script>
+      class Firework {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.ch = document.documentElement.clientHeight;
+        }
+        init() {
+          this.firebox = document.createElement("div");
+          this.firebox.style.cssText = `width:5px;height:5px;background:#fff;position:absolute;left:${this.x}px;top:${this.ch}px;`;
+          document.body.appendChild(this.firebox);
+          this.createfires();
+        }
+        firemove() {
+          bufferMove(this.firebox, { top: this.y }, () => {
+            document.body.removeChild(this.firebox);
+          });
+        }
+        createfires() {
+          for (let i = 1; i <= 200; i++) {
+            this.fires = document.createElement("div");
+            this.fires.style.cssText = `width:5px;height:5px;background:rgb(${this.rannum(
+              0,
+              255
+            )},${this.rannum(0, 255)},${this.rannum(
+              0,
+              255
+            )});position:absolute;left:${this.x}px;top:${this.y}px;`;
+            document.body.appendChild(this.fires);
+            this.fireboom(this.fires);
+          }
+        }
+        fireboom(obj) {
+          let initx = this.x;
+          let inity = this.y;
+          let speedx = parseInt(
+            (Math.random() > 0.5 ? "-" : "") + this.rannum(1, 15)
+          );
+          let speedy = parseInt(
+            (Math.random() > 0.5 ? "-" : "") + this.rannum(1, 15)
+          );
+
+          obj.timer = setInterval(() => {
+            initx += speedx / 1.1;
+            inity += speedy / 1.1 + 5;
+            if (inity >= this.ch) {
+              document.body.removeChild(obj);
+              clearInterval(obj.timer);
+            }
+            obj.style.left = initx + "px";
+            obj.style.top = inity + "px";
+          }, 1000 / 60);
+        }
+        rannum(min, max) {
+          return Math.round(Math.random() * (max - min) + min);
+        }
+      }
+    </script>
+  </body>
 </html>
