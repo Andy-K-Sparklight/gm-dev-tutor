@@ -5,12 +5,12 @@ window.$docsify.plugins.push(function (hook, vm) {
 });
 function parseFA(html) {
   var hb = html;
-  var FARegex = /{i [^}]*}/g;
+  var FARegex = /&i [a-z0-9-]*/g;
   var all = html.match(FARegex);
   console.log(all);
   if (all) {
     for (var i = 0; i < all.length; i++) {
-      var iconRegex = /(?<=\{i )[^}]*/g;
+      var iconRegex = /(?<=&i )[a-z0-9-]*/g;
       var icon = all[i].match(iconRegex) || [];
       var res = `<i class="fa fa-${icon}"></i>`;
       hb = hb.replace(all[i], res);
