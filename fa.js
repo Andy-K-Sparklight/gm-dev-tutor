@@ -1,9 +1,9 @@
 window.$docsify.plugins.push(function (hook, vm) {
   hook.afterEach(function (html, next) {
     next(
-      parseBSAlert(parseFA(html)).replace("{btmbtn}"),
+      parseBSAlert(parseFA(html.replace("{btmbtn}",
       `<button type='button' class="btn btn-info" style="width:100%;transition:500ms;" onclick="this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！')">&i question 你完成了吗？</button>`
-    );
+    ))));
   });
 });
 function parseFA(html) {
