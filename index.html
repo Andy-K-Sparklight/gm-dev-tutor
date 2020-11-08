@@ -119,11 +119,6 @@
         init() {
           this.createfires();
         }
-        firemove() {
-          bufferMove(this.firebox, { top: this.y }, () => {
-            document.body.removeChild(this.firebox);
-          });
-        }
         createfires() {
           for (let i = 1; i <= 100; i++) {
             this.fires = document.createElement("div");
