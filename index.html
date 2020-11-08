@@ -117,9 +117,6 @@
           this.ch = document.documentElement.clientHeight;
         }
         init() {
-          this.firebox = document.createElement("div");
-          this.firebox.style.cssText = `width:5px;height:5px;background:#fff;position:absolute;left:${this.x}px;top:${this.ch}px;`;
-          document.body.appendChild(this.firebox);
           this.createfires();
         }
         firemove() {
