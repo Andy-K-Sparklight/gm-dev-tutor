@@ -13,8 +13,9 @@
 在每个实例的开头，你都可以看到像这样的难度标识：
 
 <div class="progress" style="height:20px">
-  <div class="progress-bar bg-success" style="width:20%;">简易</div>
+  <div class="progress-bar bg-info" style="width:20%;">简易</div>
 </div>
+
 
 或者这样的：
 
@@ -25,14 +26,6 @@
 页面中的按钮均可点击：
 
 <button type="button" onclick='alert("BOOM!\n你已经死了。");document.write("刷新页面来继续阅读。")' class="btn btn-danger"><i class="fa fa-times"></i> 不要按这个按钮！</button>
-
-有些实例中包含情境故事，它们的信息会显示在这里：
-
-> <i class='fa fa-compass'></i> 地点
->
-> <i class='fa fa-user'></i> 你的角色
-
-等等。
 
 ---
 

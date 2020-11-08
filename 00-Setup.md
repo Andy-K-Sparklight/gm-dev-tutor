@@ -1,12 +1,6 @@
 # 准备工作
 
-<div class='progress' style='height:20px'><div class='progress-bar bg-warning' style='width:40%'>中等</div></div>
-
-> <i class='fa fa-compass'></i> WaterHub
->
-> <i class='fa fa-user'></i> Noob01
-
----
+<div class='progress' style='height:20px'><div class='progress-bar bg-success' style='width:40%'>普通</div></div>
 
 > RarityEG：亲爱的，你是新来的？
 >
@@ -44,6 +38,8 @@ VSCode 或许是免费软件中最适合用于 JavaScript 开发的工具之一�
 
 你可以在这里获得 VSCode：https://code.visualstudio.com
 
+<div class="alert alert-info"><i class="fa fa-plane"></i> 如果网页的打开耗时太久，可以试试 <a class="alert-link" href='https://microsoftedge.microsoft.com/addons/detail/%25E8%25B0%25B7%25E6%25AD%258C%25E4%25B8%258A%25E7%25BD%2591%25E5%258A%25A9%25E6%2589%258B/eoboojokdmamahfilfmamjjkcmkmddgk'>这个扩展</a></div>
+
 <div class="alert alert-info"><i class="fa fa-info-circle"></i> VSCode 支持 GNU / Linux。</div>
 
 启动 VSCode 后即可看到欢迎界面：
@@ -62,5 +58,29 @@ VSCode 或许是免费软件中最适合用于 JavaScript 开发的工具之一�
 
 ---
 
-<button type='button' class="btn btn-info" style="width:100%;transition:500ms;" onclick="this.onclick=function(){};this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！');var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();"><i class="fa fa-question"></i> 你完成了吗？</button>
+## 安装 TamperMonkey
 
+虽然我们的实例叫做「GreaseMonkey」，但我们要使用 TamperMonkey。
+
+最早的用户脚本由 GreaseMonkey 管理，但到后来，TamperMonkey 超过了它，成为了目前最受欢迎的脚本管理器之一。TamperMonkey 的大名叫做「篡改猴」，但我们还是以习惯的方法叫它「油猴」（有点像 UNIX CC 和 GCC 的关系）。
+
+TamperMonkey 完全兼容 GreaseMonkey 脚本。
+
+在 Edge 商城很容易找到 TamperMonkey 扩展，它的下载页面在 [这里](https://microsoftedge.microsoft.com/addons/detail/tampermonkey/iikmkjmpaadaobahmlepeloendndfphd)
+
+安装完成后，Edge 的右上角应该多出一个图标：
+
+![TamperMonkey](https://i.loli.net/2020/11/08/Hj5M4AlbFCETJRm.png)
+
+---
+
+<button type='button' class="btn btn-info" style="width:100%;transition:500ms;" onclick="$('#hideEle').show();this.onclick=function(){};this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！');var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();"><i class="fa fa-question"></i> 你完成了吗？</button>
+
+<div id='hideEle' style='display:none;'>
+
+
+> RarityEG：这么快！我才梳个头发，你就弄完了？
+>
+> Noob01（你）：……已经一个多小时了。
+
+</div>

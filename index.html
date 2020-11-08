@@ -66,6 +66,9 @@
     <script src="//cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+      jQuery(() => {
+        $("#hideEle").hide(0, () => {});
+      });
       function getStyle(obj, attr) {
         if (window.getComputedStyle) {
           return window.getComputedStyle(obj)[attr];
