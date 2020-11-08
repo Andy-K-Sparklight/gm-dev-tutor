@@ -1,10 +1,16 @@
 const fs = require("fs");
-fs.readFile(process.argv[2], (e, data) => {
-  fs.writeFile(
-    process.argv[2],
-    parseBSAlert(parseFA(parseBtn(data.toString()))),
-    () => {}
-  );
+fs.readdir("./", (e, files) => {
+  files.forEach((v) => {
+    if (v.endsWith(".md")) {
+      fs.writeFile(v, fs.readFileSync(v).toString(), (e) => {
+        if (e) {
+          console.log("Error building " + v);
+        } else {
+          console.log(`File ${v} emitted.`);
+        }
+      });
+    }
+  });
 });
 function parseBtn(html) {
   return html.replace(
