@@ -1,20 +1,24 @@
-window.$docsify.plugins.push(function (hook, vm) {
-  hook.afterEach(function (html, next) {
-    next(
-      parseBSAlert(parseFA(html.replace("{btmbtn}",
-      `<button type='button' class="btn btn-info" style="width:100%;transition:500ms;" onclick="this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！')">&i question 你完成了吗？</button>`
-    ))));
-  });
+const fs = require("fs");
+fs.readFile(process.argv[2], (e, data) => {
+  fs.writeFile(
+    process.argv[2],
+    parseBSAlert(parseFA(parseBtn(data.toString()))),
+    () => {}
+  );
 });
+function parseBtn(html) {
+  return html.replace(
+    "&btmbtn",
+    "<button type='button' class=\"btn btn-info\" style=\"width:100%;transition:500ms;\" onclick=\"this.onclick=function(){};this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！');var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();\"><i class=\"fa fa-question\"></i> 你完成了吗？</button>"
+  );
+}
 function parseFA(html) {
   var hb = html;
-  console.log(hb);
-  var FARegex = /&amp;i [a-z0-9\-]*/g;
+  var FARegex = /&i [a-z0-9\-]*/g;
   var all = html.match(FARegex);
-  console.log(all);
   if (all) {
     for (var i = 0; i < all.length; i++) {
-      var iconRegex = /(?<=&amp;i )[a-z0-9-]*/g;
+      var iconRegex = /(?<=&i )[a-z0-9-]*/g;
       var icon = all[i].match(iconRegex) || [];
       var res = `<i class="fa fa-${icon}"></i>`;
       hb = hb.replace(all[i], res);
