@@ -24,13 +24,13 @@ Internet Explorer 虽然历史悠久，但它正在逐渐被淘汰——所以�
 
 新版 Edge 功能强大，运行流畅，我们就用它吧……但是，怎么着我们也是开发人员，该安装**开发人员版本**。
 
-{bsa info &i info-circle 如果你习惯了使用 Google Chrome，那就接着用它吧，它和新版 Edge 是同一个内核。}
+<div class="alert alert-info"><i class="fa fa-info-circle"></i> 如果你习惯了使用 Google Chrome，那就接着用它吧，它和新版 Edge 是同一个内核。</div>
 
 在这里可以获得 Edge 的开发人员版本：https://www.microsoftedgeinsider.com/en-us/download/
 
 我们建议使用 Dev Channel。Beta 更新太慢，Canary 又太不稳定，Dev 在它们两者之间做了个折中。
 
-{bsa warning &i exclamation-triangle <b>Edge 不支持 GNU / Linux 平台！</b>如果你在使用 GNU / Linux，请使用自带的 Mozilla Firefox 浏览器。}
+<div class="alert alert-warning"><i class="fa fa-exclamation-triangle"></i> <b>Edge 不支持 GNU / Linux 平台！</b>如果你在使用 GNU / Linux，请使用自带的 Mozilla Firefox 浏览器。</div>
 
 安装过程非常简单，此处不再赘述。
 
@@ -44,13 +44,13 @@ VSCode 或许是免费软件中最适合用于 JavaScript 开发的工具之一�
 
 你可以在这里获得 VSCode：https://code.visualstudio.com
 
-{bsa info &i info-circle VSCode 支持 GNU / Linux。}
+<div class="alert alert-info"><i class="fa fa-info-circle"></i> VSCode 支持 GNU / Linux。</div>
 
 启动 VSCode 后即可看到欢迎界面：
 
 ![VSCode](https://i.loli.net/2020/11/07/7URwmc3ravy6lYh.png)
 
-{bsa info &i info-circle 这是安装了 <i>Girl, Do you like Unicorn?</i> 主题后的效果。（VSCode 本来没有这么粉……）}
+<div class="alert alert-info"><i class="fa fa-info-circle"></i> 这是安装了 <i>Girl, Do you like Unicorn?</i> 主题后的效果。（VSCode 本来没有这么粉……）</div>
 
 在左边菜单栏中单击「Extensions」（最下面一个），搜索并安装下列扩展：
 
@@ -58,9 +58,9 @@ VSCode 或许是免费软件中最适合用于 JavaScript 开发的工具之一�
 - Prettier - Code formatter
 - UserScript
 
-{bsa info &i info-circle 如果要将你的 VSCode 和我的保持完全一样，可以安装 <i>Girl, Do you like Unicorn?</i> 主题。}
+<div class="alert alert-info"><i class="fa fa-info-circle"></i> 如果要将你的 VSCode 和我的保持完全一样，可以安装 <i>Girl, Do you like Unicorn?</i> 主题。</div>
 
 ---
 
-&btmbtn
+<button type='button' class="btn btn-info" style="width:100%;transition:500ms;" onclick="this.onclick=function(){};this.className='btn btn-success';this.innerHTML=this.innerHTML.replace('question','check').replace('你完成了吗？','恭喜！');var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();"><i class="fa fa-question"></i> 你完成了吗？</button>
 
