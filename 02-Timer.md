@@ -169,7 +169,7 @@ element.innerHTML = "新的内容";
 
 考虑到你们的问题，这里有一个实验区：
 
-<div id="timerw" style='background-color:#ffe0f0;color:#150029;width:100%;height:50px;text-align:center;' onclick='regex = /[0-2]?[0-9]:[0-5][0-9]:[0-5][0-9]/g;if (regex.test($("#timer").html())) {var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();}$("#hideEle").show();$("#timer").html("<i class=\"fa fa-check\"></i> 恭喜！你完成了任务！");'><p id="timer" style="line-height:50px" onclick='regex = /[0-2]?[0-9]:[0-5][0-9]:[0-5][0-9]/g;if (regex.test($("#timer").html())) {var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();}$("#hideEle").show();$("#timer").html("<i class=\"fa fa-check\"></i> 恭喜！你完成了任务！");'
+<div id="timerw" style='background-color:#ffe0f0;color:#150029;width:100%;height:50px;text-align:center;' onclick='regex = /[0-2]?[0-9]:[0-5][0-9]:[0-5][0-9]/g;if (regex.test($("#timer").html())) {var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();$("#hideEle").show();$("#timer").html("<i class=\"fa fa-check\"></i> 恭喜！你完成了任务！");}'><p id="timer" style="line-height:50px" onclick='regex = /[0-2]?[0-9]:[0-5][0-9]:[0-5][0-9]/g;if (regex.test($("#timer").html())) {var ev = ev || window.event;new Firework(ev.clientX, ev.clientY).init();$("#hideEle").show();$("#timer").html("<i class=\"fa fa-check\"></i> 恭喜！你完成了任务！");}'
 
 
 ></p></div>
